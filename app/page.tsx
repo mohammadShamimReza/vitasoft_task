@@ -25,7 +25,6 @@ const Home: React.FC = () => {
   } | null>(null);
 
   useEffect(() => {
-    // Fetch records from the API when the component mounts
     fetchData();
   }, []);
 

@@ -1,4 +1,3 @@
-// This is a simplified example. In a real-world scenario, you would connect to a database.
 interface Record {
   id: number;
   name: string;
@@ -22,11 +21,9 @@ const records: Record[] = [
     price: 200,
     genre: "drama",
   },
-  // Add more records as needed
 ];
 
 export async function GET(request: Request) {
-  // Return all records
   return new Response(JSON.stringify(records), {
     status: 200,
     headers: { "Content-Type": "application/json" },
@@ -34,7 +31,6 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
-  // Create a new record
   const newRecord: Record = {
     id: records.length + 1,
     ...JSON.parse(await request.text()),
