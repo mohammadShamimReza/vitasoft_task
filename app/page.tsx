@@ -67,16 +67,20 @@ const Home: React.FC = () => {
       price: number;
     } | null
   ) => {
-    try {
-      toast.loading(" Book updating", { duration: 1000 });
+    console.log(updatedRecord);
+    if (updatedRecord !== null) {
+      try {
+        toast.loading(" Book updating", { duration: 1000 });
 
-      await axios.put(`/api`, updatedRecord);
-      setEditingRecord(null);
-      fetchData();
-      toast.success("Book updated successfully");
-    } catch (error) {
-      console.error("Error updating record:", error);
+        await axios.put(`/api`, updatedRecord);
+        setEditingRecord(null);
+        fetchData();
+        toast.success("Book updated successfully");
+      } catch (error) {
+        console.error("Error updating record:", error);
+      }
     }
+
   };
 
   const handleDelete = async (recordId: number) => {

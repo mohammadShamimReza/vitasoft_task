@@ -36,64 +36,56 @@ const EditForm: React.FC<EditFormProps> = ({ record, onEdit }) => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="p-4 bg-white shadow-md mb-4 rounded-lg"
-    >
-      <label className="block mb-2">
-        Name:
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          className="w-full p-2 border border-gray-300 rounded"
-        />
-      </label>
-      <label className="block mb-2">
-        Publication:
-        <input
-          type="text"
-          name="publication"
-          value={formData.publication}
-          onChange={handleChange}
-          className="w-full p-2 border border-gray-300 rounded"
-        />
-      </label>
-      <label className="block mb-2">
-        Genre:
-        <input
-          type="text"
-          name="genre"
-          value={formData.genre}
-          onChange={handleChange}
-          className="w-full p-2 border border-gray-300 rounded"
-        />
-      </label>
-      <label className="block mb-2">
-        Price:
-        <input
-          type="number"
-          name="price"
-          value={formData.price}
-          onChange={handleChange}
-          className="w-full p-2 border border-gray-300 rounded"
-        />
-      </label>
-      <button
-        type="submit"
-        className="bg-green-500 text-white py-2 px-4 rounded mr-3"
-      >
-        Update
-      </button>
-      <button
-        type="submit"
-        onClick={() => onEdit(null)}
-        className="bg-red-500 text-white py-2 px-4 rounded"
-      >
-        Cancel
-      </button>
-    </form>
+    <div className="p-4 bg-white shadow-md mb-4 rounded-lg">
+      <form onSubmit={handleSubmit} className="">
+        <label className="block mb-2">
+          Name:
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            className="w-full p-2 border border-gray-300 rounded"
+          />
+        </label>
+        <label className="block mb-2">
+          Publication:
+          <input
+            type="text"
+            name="publication"
+            value={formData.publication}
+            onChange={handleChange}
+            className="w-full p-2 border border-gray-300 rounded"
+          />
+        </label>
+        <label className="block mb-2">
+          Genre:
+          <input
+            type="text"
+            name="genre"
+            value={formData.genre}
+            onChange={handleChange}
+            className="w-full p-2 border border-gray-300 rounded"
+          />
+        </label>
+        <label className="block mb-2">
+          Price:
+          <input
+            type="number"
+            name="price"
+            value={formData.price}
+            onChange={handleChange}
+            className="w-full p-2 border border-gray-300 rounded"
+          />
+        </label>
+        <button
+          type="submit"
+          className="bg-green-500 text-white py-2 px-4 rounded mr-3"
+        >
+          Update
+        </button>
+      </form>
+    </div>
   );
 };
 
