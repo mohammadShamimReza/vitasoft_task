@@ -2,11 +2,26 @@
 interface Record {
   id: number;
   name: string;
+  publication: string;
+  genre: string;
+  price: number;
 }
 
 const records: Record[] = [
-  { id: 1, name: "Record 1" },
-  { id: 2, name: "Record 2" },
+  {
+    id: 1,
+    name: "AL kawser",
+    publication: "shamim publication",
+    price: 200,
+    genre: "drama",
+  },
+  {
+    id: 2,
+    name: "Rahikul maktum",
+    publication: "shamim publication",
+    price: 200,
+    genre: "drama",
+  },
   // Add more records as needed
 ];
 
@@ -39,7 +54,6 @@ export async function PUT(request: Request) {
     const updatedRecord = records.find(
       (record) => record.id === parseInt(id, 10)
     );
-    console.log(updatedRecord, "this is updated record");
 
     if (updatedRecord) {
       Object.assign(updatedRecord, steemData);
@@ -64,8 +78,6 @@ export async function PUT(request: Request) {
 export async function DELETE(request: Request) {
   const steemData = await request.json();
   const id = steemData.id;
-
-  console.log(id, "from delte");
 
   if (id) {
     const index = records.findIndex((record) => record.id === parseInt(id, 10));
